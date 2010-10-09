@@ -25,13 +25,13 @@
 #   
 #     ~/Library/Application Support/minecraft/mods/{MOD_NAME}
 #   
-#   and placing any .class files there. I prefer to make subdirectories 
-#   for each of the mods so I can remember what they do.
+#   and placing any .class files there. You cannot use subdirectories within
+#   the /mods folder so just put all the .class files together
 
 #   For example, to install the Better Grass mod, I must place 
 #   the my.class from the mod into  :
 #     
-#     ~/Library/Application Support/minecraft/mods/bettergrass3
+#     ~/Library/Application Support/minecraft/mods/my.class
 
 set -e
 
@@ -64,7 +64,7 @@ echo "3. Finding mods..."
 
 cd "$minecraft/mods"
 
-for mod in "`find . -name *.class -print0`"; do
+for mod in "$minecraft/mods"/*; do
   echo "\tFound modification: $mod"
   cp "$mod" "$minecraft/tmp"
 done
