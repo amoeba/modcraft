@@ -23,7 +23,7 @@
 #   
 #   Install mods by making a folder called 'mods':
 #   
-#     ~/Library/Application Support/minecraft/mods/{MOD_NAME}
+#     ~/Library/Application Support/minecraft/mods/
 #   
 #   and placing any .class files there. You cannot use subdirectories within
 #   the /mods folder so just put all the .class files together
@@ -35,7 +35,7 @@
 
 set -e
 
-minecraft="/Users/bryce/Library/Application Support/minecraft" 
+minecraft="/Users/`whoami`/Library/Application Support/minecraft" 
 
 if [ ! -d "$minecraft" ]; then
   echo "[ERROR] Couldn't find Minecraft folder."
